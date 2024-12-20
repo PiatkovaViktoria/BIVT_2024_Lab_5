@@ -30,9 +30,22 @@ public class Program
         }
         return result;
     }
-    static int Combinations(int n, int k)
+    static long Combinations(int n, int k)
     {
-        return Factorial(n) / (Factorial(k) * Factorial(n - k));
+        long result = 0;
+        if (k == 0 || k > 0 && k == n)
+        {
+            result = 1;
+        } 
+        else if (k > 0 && k < n) 
+        {
+            result = Factorial(n) / (Factorial(k) * Factorial(n - k));
+        }
+        else
+        {
+            result = 0;
+        }
+        return result;
     }   
 
     public long Task_1_1(int n, int k)
